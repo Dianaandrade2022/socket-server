@@ -12,6 +12,7 @@ const io = new Server(httpServer, {
 
 io.on("connection",(socket)=>{
     console.log("Nueva conexión",socket.id);
+
     socket.on("newMessage",(data)=>{
         io.emit("messages",data)
     });
